@@ -66,7 +66,7 @@ class KDE(KernelDensity, BaseDetector):
 
         if "random_state" in kwargs and verbose > 5:
             print(
-                "Warning: 'random_state' passed to KDE has no effect."
+                "Warning: argument 'random_state' passed to KDE has no effect."
             )
 
         # run the choose algorithm code so that exceptions will happen here

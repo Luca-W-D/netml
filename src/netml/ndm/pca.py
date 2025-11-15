@@ -14,7 +14,7 @@ class PCA(BaseDetector):
 
     def __init__(self, n_components=None, n_selected_components=None,
                  contamination=0.1, copy=True, whiten=False, svd_solver='auto',
-                 tol=0.0, iterated_power='auto', random_state=None,
+                 tol=0.0, iterated_power='auto', random_state=42,
                  weighted=True, standardization=True):
         """Principal component analysis (PCA)
 
@@ -48,7 +48,7 @@ class PCA(BaseDetector):
             Number of iterations for the power method computed by
             svd_solver == 'randomized'.
 
-        random_state : int
+        random_state: int (default is 42)
 
         weighted : bool, optional (default=True)
             If True, the eigenvalues are used in score computation.

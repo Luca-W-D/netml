@@ -28,9 +28,6 @@ class MODEL:
             a print level is to control what information should be printed according to the given value.
             The higher the value is, the more info is printed.
 
-        random_state: int
-            a value is to make your experiments more reproducible.
-
         Returns
         -------
             a MODEL instance
@@ -47,8 +44,6 @@ class MODEL:
             self.random_state = kwargs["random_state"]
             if verbose > 5:
                 print("Warning: setting random_state for a model wrapper doesn't affect the underlying predictions.")
-        else:
-            self.random_state = 42
 
     @timing
     def _train(self, X_train, y_train=None):

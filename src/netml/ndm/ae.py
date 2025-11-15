@@ -109,9 +109,7 @@ class AE(BaseDetector):
         verbose: int (default is 1)
             A print level is to control what information should be printed according to the given value.
             The higher the value is, the more info is printed.
-
-        random_state: int (default is 42)
-
+        
         """
         self.epochs = epochs
         self.batch_size = batch_size

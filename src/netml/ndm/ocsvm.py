@@ -53,7 +53,7 @@ class OCSVM(OneClassSVM):
 
         if "random_state" in kwargs and verbose > 5:
             print(
-                "Warning: 'random_state' passed to OCSVM has no effect."
+                "Warning: argument 'random_state' passed to OCSVM has no effect."
             )
 
         super(OCSVM, self).__init__(
