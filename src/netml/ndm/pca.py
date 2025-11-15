@@ -15,7 +15,7 @@ class PCA(BaseDetector):
     def __init__(self, n_components=None, n_selected_components=None,
                  contamination=0.1, copy=True, whiten=False, svd_solver='auto',
                  tol=0.0, iterated_power='auto', random_state=42,
-                 weighted=True, standardization=True, verbose=1):
+                 weighted=True, standardization=True, verbose=0):
         """Principal component analysis (PCA)
 
         Parameters
