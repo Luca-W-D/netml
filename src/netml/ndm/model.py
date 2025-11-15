@@ -13,7 +13,7 @@ from netml.utils.tool import timing
 
 class MODEL:
 
-    def __init__(self, model=None, *, score_metric='auc', verbose=1, random_state=42):
+    def __init__(self, model=None, *, score_metric='auc', verbose=1, **kwargs):
         """Train and test a model on a given data.
 
         Parameters
@@ -40,9 +40,15 @@ class MODEL:
         self.model_name = model.name
         self.score_metric = score_metric
         self.verbose = verbose
-        self.random_state = random_state
         # store all data generated during training and testing the model.
         self.history = {}
+
+        if "random_state" in kwargs:
+            self.random_state = kwargs["random_state"]
+            if verbose > 5:
+                print("Warning: setting random_state for a model wrapper doesn't affect the underlying predictions.")
+        else:
+            self.random_state = 42
 
     @timing
     def _train(self, X_train, y_train=None):
