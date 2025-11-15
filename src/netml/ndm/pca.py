@@ -15,7 +15,7 @@ class PCA(BaseDetector):
     def __init__(self, n_components=None, n_selected_components=None,
                  contamination=0.1, copy=True, whiten=False, svd_solver='auto',
                  tol=0.0, iterated_power='auto', random_state=42,
-                 weighted=True, standardization=True):
+                 weighted=True, standardization=True, verbose=1):
         """Principal component analysis (PCA)
 
         Parameters
@@ -70,6 +70,7 @@ class PCA(BaseDetector):
         self.weighted = weighted
         self.standardization = standardization
         self.score_name = "reconstructed"  # the way to obtain outlier scores
+        self.verbose = verbose
 
         self.contamination = contamination
 
